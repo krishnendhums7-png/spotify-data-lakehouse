@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python cache
 
 **pycache**/
@@ -5,11 +6,19 @@
 
 # Virtual environments
 
+=======
+﻿# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+>>>>>>> ardra
 .venv/
 venv/
 env/
 
 # Test cache
+<<<<<<< HEAD
 
 .pytest_cache/
 
@@ -20,19 +29,38 @@ data/logs/
 
 # Generated datasets
 
+=======
+.pytest_cache/
+
+# Logs
+*.log
+data/logs/
+
+# Raw datasets
+data/raw/*.csv
+
+# Generated Parquet datasets
+>>>>>>> ardra
 data/bronze/
 data/silver/
 data/gold/
 
+<<<<<<< HEAD
 # Raw CSV files
 
 data/raw/*.csv
 
 # Environment variables and secrets
 
+=======
+# Environment variables and secrets
+>>>>>>> ardra
 .env
 .env.*
 
 # IDE settings
+<<<<<<< HEAD
 
+=======
+>>>>>>> ardra
 .vscode/
