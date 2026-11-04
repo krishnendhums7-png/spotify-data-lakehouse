@@ -1,0 +1,359 @@
+{
+  "run_id": "20261103T040232Z",
+  "status": "SUCCESS",
+  "total_seconds": 83.2,
+  "finished_utc": "2026-11-03T04:03:55+00:00",
+  "stages": [
+    {
+      "stage": "bronze",
+      "seconds": 11.7,
+      "tables": [
+        {
+          "layer": "bronze",
+          "dataset": "tracks",
+          "rows_in": 114000,
+          "rows_out": 114000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/bronze/tracks",
+          "note": "all columns stored as string; + lineage columns"
+        },
+        {
+          "layer": "bronze",
+          "dataset": "charts",
+          "rows_in": 50000,
+          "rows_out": 50000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/bronze/charts",
+          "note": "all columns stored as string; + lineage columns"
+        },
+        {
+          "layer": "bronze",
+          "dataset": "countries",
+          "rows_in": 249,
+          "rows_out": 249,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/bronze/countries",
+          "note": "all columns stored as string; + lineage columns"
+        }
+      ],
+      "details": {}
+    },
+    {
+      "stage": "silver",
+      "seconds": 44.46,
+      "tables": [
+        {
+          "layer": "silver",
+          "dataset": "tracks",
+          "rows_in": 114000,
+          "rows_out": 89740,
+          "rows_rejected": 1,
+          "rows_dedup_removed": 24259,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/silver/tracks",
+          "note": "one row per track_id; genres kept in array"
+        },
+        {
+          "layer": "silver",
+          "dataset": "track_genres",
+          "rows_in": 113999,
+          "rows_out": 113549,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/silver/track_genres",
+          "note": "bridge: track_id x genre"
+        },
+        {
+          "layer": "silver",
+          "dataset": "charts",
+          "rows_in": 50000,
+          "rows_out": 50000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/silver/charts",
+          "note": "typed, validated, track_id extracted"
+        },
+        {
+          "layer": "silver",
+          "dataset": "countries",
+          "rows_in": 249,
+          "rows_out": 249,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/silver/countries",
+          "note": "ISO codes preserved"
+        },
+        {
+          "layer": "silver",
+          "dataset": "enriched_chart_data",
+          "rows_in": 50000,
+          "rows_out": 50000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/silver/enriched_chart_data",
+          "note": "LEFT JOIN tracks+countries; track match 17.11%"
+        }
+      ],
+      "details": {
+        "tracks": {
+          "index_column_dropped": true,
+          "tracks_rows": 89740,
+          "bridge_rows": 113549,
+          "rejected_rows": 1,
+          "valid_rows_before_dedup": 113999,
+          "duplicates_removed": 24259,
+          "popularity_conflicts": 720,
+          "invalid_tempo_set_null": 157,
+          "invalid_time_signature_set_null": 162
+        },
+        "charts": {
+          "valid_rows_before_dedup": 50000,
+          "charts_rows": 50000,
+          "rejected_rows": 0,
+          "duplicates_removed": 0,
+          "null_streams": 22
+        },
+        "countries": {
+          "valid_rows_before_dedup": 249,
+          "countries_rows": 249,
+          "rejected_rows": 0,
+          "duplicates_removed": 0,
+          "without_geography": 1,
+          "iso_alpha2_recovered": 1,
+          "iso_alpha2_still_missing": 0
+        },
+        "enriched": {
+          "rows": 50000,
+          "track_matched_rows": 8554,
+          "track_match_rate_pct": 17.11,
+          "distinct_chart_tracks": 6038,
+          "distinct_tracks_matched": 372,
+          "region_match_status": {
+            "matched": 48800,
+            "global_aggregate": 1200
+          },
+          "unmatched_regions": [],
+          "title_agreement_on_matched_rows": 8240
+        }
+      }
+    },
+    {
+      "stage": "gold",
+      "seconds": 21.34,
+      "tables": [
+        {
+          "layer": "gold",
+          "dataset": "enriched_chart_data",
+          "rows_in": 50000,
+          "rows_out": 50000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/enriched_chart_data",
+          "note": "partitioned by chart_year; + date parts + chart_record_id"
+        },
+        {
+          "layer": "gold",
+          "dataset": "music_analytics",
+          "rows_in": 50000,
+          "rows_out": 50000,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/music_analytics",
+          "note": "curated wide BI table; one row per chart entry"
+        },
+        {
+          "layer": "gold",
+          "dataset": "country_analytics",
+          "rows_in": null,
+          "rows_out": 73,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/country_analytics",
+          "note": "grain: region x chart_type"
+        },
+        {
+          "layer": "gold",
+          "dataset": "artist_analytics",
+          "rows_in": null,
+          "rows_out": 3363,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/artist_analytics",
+          "note": "grain: credited artist (comma-split)"
+        },
+        {
+          "layer": "gold",
+          "dataset": "genre_analytics",
+          "rows_in": null,
+          "rows_out": 114,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/genre_analytics",
+          "note": "grain: genre; catalogue + chart metrics"
+        },
+        {
+          "layer": "gold",
+          "dataset": "monthly_analytics",
+          "rows_in": null,
+          "rows_out": 8,
+          "rows_rejected": 0,
+          "rows_dedup_removed": 0,
+          "path": "/tmp/pytest-of-root/pytest-2/lake0/gold/monthly_analytics",
+          "note": "grain: year-month x chart_type"
+        }
+      ],
+      "details": {}
+    },
+    {
+      "stage": "verify",
+      "seconds": 5.66,
+      "tables": [],
+      "details": {
+        "checks": [
+          {
+            "check": "readable+columns bronze/tracks",
+            "passed": true,
+            "detail": "rows=114,000 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns bronze/charts",
+            "passed": true,
+            "detail": "rows=50,000 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns bronze/countries",
+            "passed": true,
+            "detail": "rows=249 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns silver/tracks",
+            "passed": true,
+            "detail": "rows=89,740 missing_cols=[]"
+          },
+          {
+            "check": "type silver/tracks.popularity",
+            "passed": true,
+            "detail": "int"
+          },
+          {
+            "check": "type silver/tracks.duration_ms",
+            "passed": true,
+            "detail": "bigint"
+          },
+          {
+            "check": "type silver/tracks.tempo",
+            "passed": true,
+            "detail": "double"
+          },
+          {
+            "check": "type silver/tracks.explicit",
+            "passed": true,
+            "detail": "boolean"
+          },
+          {
+            "check": "readable+columns silver/track_genres",
+            "passed": true,
+            "detail": "rows=113,549 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns silver/charts",
+            "passed": true,
+            "detail": "rows=50,000 missing_cols=[]"
+          },
+          {
+            "check": "type silver/charts.chart_date",
+            "passed": true,
+            "detail": "date"
+          },
+          {
+            "check": "type silver/charts.chart_rank",
+            "passed": true,
+            "detail": "int"
+          },
+          {
+            "check": "type silver/charts.streams",
+            "passed": true,
+            "detail": "bigint"
+          },
+          {
+            "check": "readable+columns silver/countries",
+            "passed": true,
+            "detail": "rows=249 missing_cols=[]"
+          },
+          {
+            "check": "type silver/countries.iso_numeric_code",
+            "passed": true,
+            "detail": "int"
+          },
+          {
+            "check": "readable+columns silver/enriched_chart_data",
+            "passed": true,
+            "detail": "rows=50,000 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/enriched_chart_data",
+            "passed": true,
+            "detail": "rows=50,000 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/music_analytics",
+            "passed": true,
+            "detail": "rows=50,000 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/country_analytics",
+            "passed": true,
+            "detail": "rows=73 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/artist_analytics",
+            "passed": true,
+            "detail": "rows=3,363 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/genre_analytics",
+            "passed": true,
+            "detail": "rows=114 missing_cols=[]"
+          },
+          {
+            "check": "readable+columns gold/monthly_analytics",
+            "passed": true,
+            "detail": "rows=8 missing_cols=[]"
+          },
+          {
+            "check": "charts: bronze = silver + quarantine + duplicates",
+            "passed": true,
+            "detail": "50000 = 50000 + 0 + 0"
+          },
+          {
+            "check": "charts: no chart row lost silver -> enriched -> gold",
+            "passed": true,
+            "detail": "50000 / 50000 / 50000 / 50000"
+          },
+          {
+            "check": "tracks: unique track_id",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "check": "tracks: silver <= bronze",
+            "passed": true,
+            "detail": "89740 <= 114000"
+          },
+          {
+            "check": "gold: chart_record_id unique",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "check": "countries: every country has an ISO alpha-2 code (Namibia 'NA' recovered from iso_3166_2)",
+            "passed": true,
+            "detail": ""
+          }
+        ]
+      }
+    }
+  ]
+}

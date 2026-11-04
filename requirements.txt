@@ -1,0 +1,6 @@
+# Tested with Python 3.12 + OpenJDK 21 on Ubuntu 24.04.
+# Spark 4.x needs Java 17 or 21 installed separately (pip does not install Java).
+pyspark==4.3.0
+pytest>=8.0
+# Only used by scripts/profile_sources.py (lightweight profiling of the raw CSVs).
+pandas>=2.0
