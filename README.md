@@ -136,3 +136,62 @@ Delivered result: 46 unit + 8 integration tests passed on the author's machine; 
 * No artist ids in the sources; artist names are split from a comma-separated credit string.
 * Local-mode Spark only. For larger data: remove `coalesce(1)`, raise shuffle partitions, partition by date, replace `cache()` where memory is limited.
 * Great Expectations suites, Airflow DAG, dbt models and the dashboard belong to Members 3-5.
+
+
+---
+
+# Member 5 Module: Analytics, Visualization and Dashboard Deployment
+
+## 11. Streamlit Analytics Dashboard
+
+Member 5 developed an interactive Streamlit dashboard to visualize Spotify music streaming analytics using the processed analytical datasets.
+
+**Live Dashboard:** https://spotify-data-lakehousegit-zhtkaewezyjamvejqjzdks.streamlit.app/
+
+**GitHub Branch:** `member5-dashboard`
+
+### 11.1 Dashboard Features
+
+1. **Country Analytics:** Analyses country-wise chart performance and popularity.
+2. **Artist Leaderboard:** Displays artist rankings, chart entries and attributed streams.
+3. **Genre Performance:** Compares streaming performance across music genres.
+4. **Monthly and Seasonal Trends:** Visualizes changes in music trends over time.
+5. **Top Tracks by Country:** Displays popular tracks across selected countries.
+6. **Track Longevity:** Analyses track chart presence and longevity.
+
+### 11.2 Technologies Used
+
+- Python
+- Streamlit
+- Pandas
+- PyArrow
+- Parquet
+
+### 11.3 Running the Dashboard Locally
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the dashboard:
+
+```bash
+python -m streamlit run dashboard/app.py
+```
+
+The dashboard will be available at `http://localhost:8501`.
+
+### 11.4 Testing and Deployment
+
+The dashboard was deployed using Streamlit Community Cloud.
+
+The following checks were performed:
+
+- Verified all eight analytical Parquet files.
+- Successfully loaded the datasets using Pandas.
+- Checked package dependencies.
+- Verified Python syntax.
+- Tested all six dashboard sections and interactive filters.
+- Verified the live dashboard deployment.
