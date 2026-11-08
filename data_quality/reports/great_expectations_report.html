@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -135,8 +135,8 @@
                 <p>Data Quality Assurance & Workflow Orchestration Audit</p>
             </div>
             <div>
-                <span class="badge" style="font-size: 14px; padding: 8px 16px; background-color: #ef444422; color: #ef4444;">
-                    11 SUITE(S) FAILED
+                <span class="badge" style="font-size: 14px; padding: 8px 16px; background-color: #10b98122; color: #10b981;">
+                    ALL QUALITY GATES PASSED
                 </span>
             </div>
         </header>
@@ -144,13 +144,13 @@
         <section class="kpi-grid">
             <div class="kpi-card">
                 <div class="kpi-label">Expectation Success Rate</div>
-                <div class="kpi-value" style="color: #ef4444;">0.0%</div>
-                <div class="kpi-sub">0 of 61 expectations satisfied</div>
+                <div class="kpi-value" style="color: #10b981;">100.0%</div>
+                <div class="kpi-sub">40 of 40 expectations satisfied</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">Suites Executed</div>
-                <div class="kpi-value">11</div>
-                <div class="kpi-sub">0 passed | 11 failed</div>
+                <div class="kpi-value">5</div>
+                <div class="kpi-sub">5 passed | 0 failed</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">Active Layers</div>
@@ -165,118 +165,7 @@
         </section>
 
         <section>
-            
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">bronze_tracks_suite</h3>
-                    <span class="suite-sub">Layer: <strong>BRONZE</strong> | Asset: <code>tracks</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/3 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'tracks' must exist on disk in layer 'bronze'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">bronze_charts_suite</h3>
-                    <span class="suite-sub">Layer: <strong>BRONZE</strong> | Asset: <code>charts</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/3 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'charts' must exist on disk in layer 'bronze'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">bronze_countries_suite</h3>
-                    <span class="suite-sub">Layer: <strong>BRONZE</strong> | Asset: <code>countries</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/2 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'countries' must exist on disk in layer 'bronze'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
+
         <div class="suite-card">
             <div class="suite-header">
                 <div>
@@ -284,8 +173,8 @@
                     <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>tracks</code> | Engine: <em>GreatExpectations_1.24</em></span>
                 </div>
                 <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/19 (0.0%)</span>
+                    <span class="badge badge-pass">PASSED</span>
+                    <span class="suite-stat">19/19 (100.0%)</span>
                 </div>
             </div>
             <table class="styled-table">
@@ -300,20 +189,182 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
             <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'tracks' must exist on disk in layer 'silver'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-schema">schema</span></td>
+                <td><strong>expect_table_columns_to_match_set</strong><br><small class="text-muted">Silver tracks schema must include typed audio features and genre arrays</small></td>
+                <td><code>['acousticness', 'album_name', 'artists', 'danceability',...</code></td>
                 <td>0</td>
+                <td>2</td>
             </tr>
-            
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">track_id is primary key and must never be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-duplicates">duplicates</span></td>
+                <td><strong>expect_column_values_to_be_unique</strong><br><small class="text-muted">track_id must be completely unique after deduplication</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-format">format</span></td>
+                <td><strong>expect_column_values_to_match_regex</strong><br><small class="text-muted">track_id must be exactly 22 alphanumeric characters</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">track_name must be present in Silver (blank names quarantined)</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">artists string must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">popularity must be between 0 and 100</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">duration_ms must be positive (at least 1s)</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">danceability unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">energy unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">speechiness unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">acousticness unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">instrumentalness unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">liveness unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">valence unit interval [0.0, 1.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">loudness in valid dB range [-60.0, 10.0]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">pitch key must be in pitch class [0, 11]</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_in_set</strong><br><small class="text-muted">mode must be 0 (minor) or 1 (major)</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-ranges">ranges</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">tempo must be > 0 and <= 300 BPM (0 sentinels set to null)</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
                 </tbody>
             </table>
         </div>
-        
+
         <div class="suite-card">
             <div class="suite-header">
                 <div>
@@ -321,8 +372,8 @@
                     <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>charts</code> | Engine: <em>GreatExpectations_1.24</em></span>
                 </div>
                 <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/11 (0.0%)</span>
+                    <span class="badge badge-pass">PASSED</span>
+                    <span class="suite-stat">11/11 (100.0%)</span>
                 </div>
             </div>
             <table class="styled-table">
@@ -337,20 +388,110 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
             <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'charts' must exist on disk in layer 'silver'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-schema">schema</span></td>
+                <td><strong>expect_table_columns_to_match_set</strong><br><small class="text-muted">Silver charts must contain standardized column names and extracted track_id</small></td>
+                <td><code>['chart_artist', 'chart_date', 'chart_rank', 'chart_type'...</code></td>
                 <td>0</td>
+                <td>2</td>
             </tr>
-            
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-duplicates">duplicates</span></td>
+                <td><strong>expect_compound_columns_to_be_unique</strong><br><small class="text-muted">Primary grain (date, region, chart_type, rank) must be unique</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">chart_date must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-dates">dates</span></td>
+                <td><strong>expect_column_values_to_match_regex</strong><br><small class="text-muted">chart_date must conform to ISO 8601 YYYY-MM-DD</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">chart_rank must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-chart_positions">chart_positions</span></td>
+                <td><strong>expect_column_values_to_be_between</strong><br><small class="text-muted">chart rank must be between 1 and 200</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">chart region must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">chart_type must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-chart_positions">chart_positions</span></td>
+                <td><strong>expect_column_values_to_be_in_set</strong><br><small class="text-muted">chart_type must be top200 or viral50</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">track_id parsed from URL must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-chart_positions">chart_positions</span></td>
+                <td><strong>expect_column_values_to_be_in_set</strong><br><small class="text-muted">trend must be one of the 4 Spotify trend categories</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
                 </tbody>
             </table>
         </div>
-        
+
         <div class="suite-card">
             <div class="suite-header">
                 <div>
@@ -358,8 +499,8 @@
                     <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>countries</code> | Engine: <em>GreatExpectations_1.24</em></span>
                 </div>
                 <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/5 (0.0%)</span>
+                    <span class="badge badge-pass">PASSED</span>
+                    <span class="suite-stat">5/5 (100.0%)</span>
                 </div>
             </div>
             <table class="styled-table">
@@ -374,20 +515,56 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
             <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'countries' must exist on disk in layer 'silver'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">iso_alpha2 must not be null (Namibia 'NA' recovered)</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
                 <td>0</td>
+                <td>2</td>
             </tr>
-            
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-format">format</span></td>
+                <td><strong>expect_column_value_lengths_to_equal</strong><br><small class="text-muted">iso_alpha2 must be exactly 2 characters</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">iso_alpha3 must not be null</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-duplicates">duplicates</span></td>
+                <td><strong>expect_column_values_to_be_unique</strong><br><small class="text-muted">iso_alpha3 must be unique primary key</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-format">format</span></td>
+                <td><strong>expect_column_value_lengths_to_equal</strong><br><small class="text-muted">iso_alpha3 must be exactly 3 characters</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
                 </tbody>
             </table>
         </div>
-        
+
         <div class="suite-card">
             <div class="suite-header">
                 <div>
@@ -395,8 +572,8 @@
                     <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>track_genres</code> | Engine: <em>GreatExpectations_1.24</em></span>
                 </div>
                 <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/3 (0.0%)</span>
+                    <span class="badge badge-pass">PASSED</span>
+                    <span class="suite-stat">3/3 (100.0%)</span>
                 </div>
             </div>
             <table class="styled-table">
@@ -411,29 +588,47 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
             <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'track_genres' must exist on disk in layer 'silver'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">track_id must not be null in genre bridge</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
                 <td>0</td>
+                <td>2</td>
             </tr>
-            
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-nulls">nulls</span></td>
+                <td><strong>expect_column_values_to_not_be_null</strong><br><small class="text-muted">genre must not be null in genre bridge</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-duplicates">duplicates</span></td>
+                <td><strong>expect_compound_columns_to_be_unique</strong><br><small class="text-muted">(track_id, genre) pairs must be unique</small></td>
+                <td><code>PASS (GX 1.24)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
                 </tbody>
             </table>
         </div>
-        
+
         <div class="suite-card">
             <div class="suite-header">
                 <div>
                     <h3 class="suite-title">quarantine_isolation_suite</h3>
-                    <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>tracks_quarantine</code> | Engine: <em>GreatExpectations_1.24</em></span>
+                    <span class="suite-sub">Layer: <strong>SILVER</strong> | Asset: <code>tracks_quarantine</code> | Engine: <em>CustomIntegrationValidator</em></span>
                 </div>
                 <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/2 (0.0%)</span>
+                    <span class="badge badge-pass">PASSED</span>
+                    <span class="suite-stat">2/2 (100.0%)</span>
                 </div>
             </div>
             <table class="styled-table">
@@ -448,135 +643,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
             <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'tracks_quarantine' must exist on disk in layer 'silver'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-quarantine">quarantine</span></td>
+                <td><strong>expect_quarantine_records_to_have_reasons</strong><br><small class="text-muted">Quarantined tracks must document non-empty reject reasons</small></td>
+                <td><code>All reasons present</code></td>
+                <td>0</td>
                 <td>0</td>
             </tr>
-            
+
+            <tr>
+                <td><span class="status-pass">PASS</span></td>
+                <td><span class="dim-tag dim-quarantine">quarantine</span></td>
+                <td><strong>expect_quarantine_error_rate_to_be_below_threshold</strong><br><small class="text-muted">Quarantine rate must not breach error budget (0.1%)</small></td>
+                <td><code>0.0% (threshold: 0.1%)</code></td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+
                 </tbody>
             </table>
         </div>
-        
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">gold_enriched_charts_suite</h3>
-                    <span class="suite-sub">Layer: <strong>GOLD</strong> | Asset: <code>enriched_chart_data</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/6 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'enriched_chart_data' must exist on disk in layer 'gold'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">gold_country_analytics_suite</h3>
-                    <span class="suite-sub">Layer: <strong>GOLD</strong> | Asset: <code>country_analytics</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/2 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'country_analytics' must exist on disk in layer 'gold'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="suite-card">
-            <div class="suite-header">
-                <div>
-                    <h3 class="suite-title">referential_integrity_suite</h3>
-                    <span class="suite-sub">Layer: <strong>MARTS</strong> | Asset: <code>star_schema_integrity</code> | Engine: <em>GreatExpectations_1.24</em></span>
-                </div>
-                <div>
-                    <span class="badge badge-fail">MISSING DATASET</span>
-                    <span class="suite-stat">0/5 (0.0%)</span>
-                </div>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">Status</th>
-                        <th style="width: 110px;">Dimension</th>
-                        <th>Expectation & Description</th>
-                        <th>Observed Metric / Value</th>
-                        <th style="width: 90px;">Violations</th>
-                        <th style="width: 90px;">Elements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-            <tr>
-                <td><span class="status-fail">FAIL</span></td>
-                <td><span class="dim-tag dim-availability">availability</span></td>
-                <td><strong>expect_dataset_to_exist</strong><br><small class="text-muted">Dataset 'star_schema_integrity' must exist on disk in layer 'marts'</small></td>
-                <td><code>DATASET_NOT_FOUND</code></td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-            
-                </tbody>
-            </table>
-        </div>
-        
+
         </section>
 
         <footer class="footer">
-            Spotify Lakehouse &bull; Data Quality Architecture &bull; Generated: 2026-11-06 17:48:47 UTC
+            Spotify Lakehouse &bull; Data Quality Architecture &bull; Generated: 2026-11-08 17:03:04 UTC
         </footer>
     </div>
 </body>

@@ -210,12 +210,21 @@ class GreatExpectationsValidator:
 
     def _read_dataset(self, layer: str, asset: str) -> pd.DataFrame | None:
         """Read Parquet dataset from lakehouse or dbt exports."""
-        # 1. Lakehouse paths:
-        candidates = [
-            self.data_dir / layer / asset,
-            self.data_dir / layer / f"{asset}.parquet",
-            self.data_dir / layer / asset / "data.parquet",
-        ]
+        # 1. Lakehouse paths. Member 2 stores rejected Silver tracks under
+        # data/silver/_quarantine/tracks, while the suite calls this asset
+        # "tracks_quarantine". Keep the logical suite name and resolve its
+        # physical location here.
+        if layer == "silver" and asset == "tracks_quarantine":
+            candidates = [
+                self.data_dir / "silver" / "_quarantine" / "tracks",
+                self.data_dir / "silver" / "_quarantine" / "tracks.parquet",
+            ]
+        else:
+            candidates = [
+                self.data_dir / layer / asset,
+                self.data_dir / layer / f"{asset}.parquet",
+                self.data_dir / layer / asset / "data.parquet",
+            ]
         for p in candidates:
             if p.exists():
                 try:
@@ -287,8 +296,65 @@ class GreatExpectationsValidator:
         )
         gx_result = val_def.run(batch_parameters={"dataframe": df})
 
+        # GX result ordering is not guaranteed to match the order in which
+        # expectations were added. Match each result to its expectation config
+        # using its type and authored kwargs; never zip by position.
+        remaining = list(gxe_map)
         evaluations: list[ExpectationEvaluation] = []
-        for (exp_def, _), res in zip(gxe_map, gx_result.results):
+
+        def result_config_parts(result: Any) -> tuple[str, dict[str, Any]]:
+            config = getattr(result, "expectation_config", None)
+            if config is None:
+                return "", {}
+            config_type = (
+                getattr(config, "type", None)
+                or getattr(config, "expectation_type", None)
+                or ""
+            )
+            config_kwargs = getattr(config, "kwargs", {}) or {}
+            return str(config_type), dict(config_kwargs)
+
+        def find_matching_definition(result: Any) -> int | None:
+            result_type, result_kwargs = result_config_parts(result)
+            candidates: list[int] = []
+            for index, (definition, _) in enumerate(remaining):
+                if definition.get("expectation_type", "") != result_type:
+                    continue
+                authored_kwargs = definition.get("kwargs", {}) or {}
+                # GX may add internal/default kwargs. Only require the kwargs
+                # explicitly supplied in our declarative definition to match.
+                if all(
+                    result_kwargs.get(key) == value
+                    for key, value in authored_kwargs.items()
+                    if key != "allow_null"
+                ):
+                    candidates.append(index)
+            return candidates[0] if len(candidates) == 1 else None
+
+        for res in gx_result.results:
+            match_index = find_matching_definition(res)
+            if match_index is None:
+                result_type, result_kwargs = result_config_parts(res)
+                evaluations.append(
+                    ExpectationEvaluation(
+                        expectation_type=result_type or "unmatched_gx_result",
+                        dimension="data_quality",
+                        description="GX returned a result that could not be uniquely matched to its configured expectation",
+                        success=False,
+                        observed_value="UNMATCHED_OR_AMBIGUOUS_GX_RESULT",
+                        unexpected_count=1,
+                        unexpected_percent=100.0,
+                        element_count=len(df),
+                        details={
+                            "gx_native": True,
+                            "result_kwargs": result_kwargs,
+                            "error": "Expectation result mapping was ambiguous or unmatched.",
+                        },
+                    )
+                )
+                continue
+
+            exp_def, _ = remaining.pop(match_index)
             meta = exp_def.get("meta", {})
             dim = meta.get("dimension", "data_quality")
             desc = meta.get("description", exp_def.get("expectation_type", ""))
@@ -315,6 +381,24 @@ class GreatExpectationsValidator:
                     details={"gx_native": True, "result": res_dict},
                 )
             )
+
+        # If GX omits a result, record an explicit failure for that expectation.
+        for exp_def, _ in remaining:
+            meta = exp_def.get("meta", {})
+            evaluations.append(
+                ExpectationEvaluation(
+                    expectation_type=exp_def.get("expectation_type", ""),
+                    dimension=meta.get("dimension", "data_quality"),
+                    description=meta.get("description", exp_def.get("expectation_type", "")),
+                    success=False,
+                    observed_value="MISSING_GX_RESULT",
+                    unexpected_count=1,
+                    unexpected_percent=100.0,
+                    element_count=len(df),
+                    details={"gx_native": True, "error": "GX did not return a result for this expectation."},
+                )
+            )
+
         return evaluations
 
     def _execute_custom_integration_suite(

@@ -1,36 +1,29 @@
 {
-  "run_id": "20261106T174904Z",
-  "completed_utc": "2026-11-06T17:49:04.364431+00:00",
-  "total_duration_seconds": 0.01,
-  "overall_status": "FAILED",
+  "run_id": "test_dq_run",
+  "completed_utc": "2026-11-08T17:03:06.074005+00:00",
+  "total_duration_seconds": 0.0,
+  "overall_status": "SUCCESS",
   "task_count": 2,
   "tasks": [
     {
-      "task_id": "preflight_health_check",
+      "task_id": "preflight",
       "status": "SUCCESS",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.05,
       "records_in": null,
       "records_out": null,
       "records_quarantined": null,
       "quality_pass_rate": null,
-      "extra_details": {
-        "project_root": "D:\\spotify_data_engineering",
-        "data_dir": "D:\\spotify_data_engineering\\data",
-        "python_version": "3.13.5",
-        "timestamp_utc": "2026-11-06T17:49:04.350753+00:00"
-      }
+      "extra_details": {}
     },
     {
-      "task_id": "ingest_tracks",
-      "status": "FAILED",
-      "duration_seconds": 0.01,
-      "records_in": null,
-      "records_out": null,
+      "task_id": "validate_silver",
+      "status": "SUCCESS",
+      "duration_seconds": 1.2,
+      "records_in": 89740,
+      "records_out": 89740,
       "records_quarantined": null,
       "quality_pass_rate": null,
-      "extra_details": {
-        "error": "No module named 'ingestion'"
-      }
+      "extra_details": {}
     }
   ]
 }

@@ -48,17 +48,17 @@ class TestEndToEndScenarios(unittest.TestCase):
             "time_signature": [4, 4],
             "genres": [["pop"], ["rock"]],
             "primary_genre": ["pop", "rock"],
-            "genres_count": [1, 1],
+            "genre_count": [1, 1],
         })
 
         clean_charts = pd.DataFrame({
-            "chart_title": ["Track 1", "Track 2"],
+            "track_title": ["Track 1", "Track 2"],
             "chart_rank": [1, 2],
             "chart_date": ["2023-01-01", "2023-01-02"],
             "chart_artist": ["Artist 1", "Artist 2"],
             "track_url": ["https://open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh", "https://open.spotify.com/track/1301WleyT98MSxVHPZCA6M"],
             "region": ["US", "GB"],
-            "chart": ["top200", "top200"],
+            "chart_type": ["top200", "top200"],
             "trend": ["SAME_POSITION", "NEW_ENTRY"],
             "streams": [500000, 450000],
             "track_id": ["4iV5W9uYEdYUVa79Axb7Rh", "1301WleyT98MSxVHPZCA6M"],
