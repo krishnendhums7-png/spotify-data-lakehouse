@@ -26,8 +26,8 @@ TIME_SIGNATURE_RANGE = {"min_value": 1, "max_value": 7}
 DURATION_MIN_MS = 1000
 
 CHART_MAX_RANKS = {"top200": 200, "viral50": 50}
-VALID_TRENDS = ["SAME_POSITION", "MOVED_UP", "MOVED_DOWN", "NEW_ENTRY"]
-VALID_SEASONS = ["winter", "spring", "summer", "autumn"]
+VALID_TRENDS = ["SAME_POSITION", "MOVE_UP", "MOVE_DOWN", "NEW_ENTRY"]
+VALID_SEASONS = ["Winter", "Spring", "Summer", "Autumn"]
 DATE_REGEX = r"^\d{4}-\d{2}-\d{2}$"
 TRACK_ID_REGEX = r"^[A-Za-z0-9]{22}$"
 
@@ -138,7 +138,7 @@ SILVER_TRACKS_EXPECTATIONS: list[dict[str, Any]] = [
                 "track_id", "track_name", "album_name", "artists", "popularity", "duration_ms",
                 "explicit", "danceability", "energy", "key", "loudness", "mode", "speechiness",
                 "acousticness", "instrumentalness", "liveness", "valence", "tempo",
-                "time_signature", "genres", "primary_genre", "genres_count",
+                "time_signature", "genres", "primary_genre", "genre_count",
             ],
             "exact_match": False,
         },
@@ -241,8 +241,8 @@ SILVER_CHARTS_EXPECTATIONS: list[dict[str, Any]] = [
         "expectation_type": "expect_table_columns_to_match_set",
         "kwargs": {
             "column_set": [
-                "chart_title", "chart_rank", "chart_date", "chart_artist", "track_url",
-                "region", "chart", "trend", "streams", "track_id", "has_streams",
+                "track_title", "chart_rank", "chart_date", "chart_artist", "track_url",
+                "region", "chart_type", "trend", "streams", "track_id", "has_streams",
             ],
             "exact_match": False,
         },
@@ -265,8 +265,8 @@ SILVER_CHARTS_EXPECTATIONS: list[dict[str, Any]] = [
     },
     {
         "expectation_type": "expect_column_values_to_not_be_null",
-        "kwargs": {"column": "chart"},
-        "meta": {"dimension": "nulls", "description": "chart type must not be null"},
+        "kwargs": {"column": "chart_type"},
+        "meta": {"dimension": "nulls", "description": "chart_type must not be null"},
     },
     {
         "expectation_type": "expect_column_values_to_not_be_null",
@@ -280,8 +280,8 @@ SILVER_CHARTS_EXPECTATIONS: list[dict[str, Any]] = [
     },
     {
         "expectation_type": "expect_column_values_to_be_in_set",
-        "kwargs": {"column": "chart", "value_set": ["top200", "viral50"]},
-        "meta": {"dimension": "chart_positions", "description": "chart must be top200 or viral50"},
+        "kwargs": {"column": "chart_type", "value_set": ["top200", "viral50"]},
+        "meta": {"dimension": "chart_positions", "description": "chart_type must be top200 or viral50"},
     },
     {
         "expectation_type": "expect_column_values_to_be_in_set",
@@ -295,8 +295,8 @@ SILVER_CHARTS_EXPECTATIONS: list[dict[str, Any]] = [
     },
     {
         "expectation_type": "expect_compound_columns_to_be_unique",
-        "kwargs": {"column_list": ["chart_date", "region", "chart", "chart_rank"]},
-        "meta": {"dimension": "duplicates", "description": "Primary grain (date, region, chart, rank) must be unique"},
+        "kwargs": {"column_list": ["chart_date", "region", "chart_type", "chart_rank"]},
+        "meta": {"dimension": "duplicates", "description": "Primary grain (date, region, chart_type, rank) must be unique"},
     },
 ]
 

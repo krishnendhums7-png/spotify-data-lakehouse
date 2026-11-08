@@ -65,7 +65,7 @@ class TestDataQualityGreatExpectations(unittest.TestCase):
             "time_signature": [4, 4],
             "genres": [["pop"], ["dance"]],
             "primary_genre": ["pop", "dance"],
-            "genres_count": [1, 1],
+            "genre_count": [1, 1],
         })
         res = self.validator.validate_suite("silver_tracks_suite", clean_df, "silver", "tracks")
         self.assertTrue(res.success, f"Expected clean data to pass: {[e.description for e in res.evaluations if not e.success]}")

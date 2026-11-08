@@ -1,3 +1,4 @@
+
 {
   "data_asset_type": null,
   "expectation_suite_name": "silver_charts_suite",
@@ -6,13 +7,13 @@
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
-          "chart_title",
+          "track_title",
           "chart_rank",
           "chart_date",
           "chart_artist",
           "track_url",
           "region",
-          "chart",
+          "chart_type",
           "trend",
           "streams",
           "track_id",
@@ -58,7 +59,7 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "chart"
+        "column": "chart_type"
       },
       "meta": {
         "dimension": "nulls",
@@ -90,7 +91,7 @@
     {
       "expectation_type": "expect_column_values_to_be_in_set",
       "kwargs": {
-        "column": "chart",
+        "column": "chart_type",
         "value_set": [
           "top200",
           "viral50"
@@ -98,7 +99,7 @@
       },
       "meta": {
         "dimension": "chart_positions",
-        "description": "chart must be top200 or viral50"
+        "description": "chart_type must be top200 or viral50"
       }
     },
     {
@@ -107,8 +108,8 @@
         "column": "trend",
         "value_set": [
           "SAME_POSITION",
-          "MOVED_UP",
-          "MOVED_DOWN",
+          "MOVE_UP",
+          "MOVE_DOWN",
           "NEW_ENTRY"
         ]
       },
@@ -134,13 +135,13 @@
         "column_list": [
           "chart_date",
           "region",
-          "chart",
+          "chart_type",
           "chart_rank"
         ]
       },
       "meta": {
         "dimension": "duplicates",
-        "description": "Primary grain (date, region, chart, rank) must be unique"
+        "description": "Primary grain (date, region, chart type, rank) must be unique"
       }
     }
   ],

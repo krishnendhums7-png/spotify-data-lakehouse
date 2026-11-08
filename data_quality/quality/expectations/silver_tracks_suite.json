@@ -27,7 +27,7 @@
           "time_signature",
           "genres",
           "primary_genre",
-          "genres_count"
+          "genre_count"
         ],
         "exact_match": false
       },

@@ -317,7 +317,7 @@ def generate_validation_reports(
         f"- **Suites Passed:** `{passed_suites}/{total_suites}`",
         f"- **Engines:** Native Great Expectations 1.24.1 + Custom Integration Validator",
         "",
-        "## Expectation Suite Results (All 11 Suites)",
+        f"## Expectation Suite Results ({total_suites} Suites)",
         "| Suite Name | Layer | Asset | Engine | Total Checks | Passed | Failed | Status |",
         "|---|---|---|---|:---:|:---:|:---:|:---:|",
     ]

@@ -1,0 +1,2109 @@
+{
+  "validation_run_utc": "2026-11-08T16:32:23.038717+00:00",
+  "author": "Member 4 (Data Quality & Workflow Orchestration)",
+  "summary": {
+    "total_suites": 11,
+    "passed_suites": 11,
+    "failed_suites": 0,
+    "total_expectations": 61,
+    "passed_expectations": 61,
+    "failed_expectations": 0,
+    "overall_success": true
+  },
+  "suites": [
+    {
+      "suite_name": "bronze_tracks_suite",
+      "target_asset": "tracks",
+      "layer": "bronze",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 3,
+        "passed_expectations": 3,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Bronze tracks must contain raw source columns and lineage attributes"
+            }
+          },
+          "result": {
+            "element_count": 114000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": [
+              "_c0",
+              "_ingested_at",
+              "_run_id",
+              "_source_file",
+              "acousticness",
+              "album_name",
+              "artists",
+              "danceability",
+              "duration_ms",
+              "energy",
+              "explicit",
+              "instrumentalness",
+              "key",
+              "liveness",
+              "loudness",
+              "mode",
+              "popularity",
+              "speechiness",
+              "tempo",
+              "time_signature",
+              "track_genre",
+              "track_id",
+              "track_name",
+              "valence"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "_c0",
+                  "_ingested_at",
+                  "_run_id",
+                  "_source_file",
+                  "acousticness",
+                  "album_name",
+                  "artists",
+                  "danceability",
+                  "duration_ms",
+                  "energy",
+                  "explicit",
+                  "instrumentalness",
+                  "key",
+                  "liveness",
+                  "loudness",
+                  "mode",
+                  "popularity",
+                  "speechiness",
+                  "tempo",
+                  "time_signature",
+                  "track_genre",
+                  "track_id",
+                  "track_name",
+                  "valence"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_row_count_to_be_between",
+            "meta": {
+              "dimension": "volume",
+              "description": "Bronze tracks must not be empty"
+            }
+          },
+          "result": {
+            "element_count": 114000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": 114000,
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": 114000
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_id must not be null in Bronze tracks"
+            }
+          },
+          "result": {
+            "element_count": 114000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 114000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:17.496728+00:00"
+    },
+    {
+      "suite_name": "bronze_charts_suite",
+      "target_asset": "charts",
+      "layer": "bronze",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 3,
+        "passed_expectations": 3,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Bronze charts must contain raw source columns and lineage attributes"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": [
+              "_ingested_at",
+              "_run_id",
+              "_source_file",
+              "artist",
+              "chart",
+              "date",
+              "rank",
+              "region",
+              "streams",
+              "title",
+              "trend",
+              "url"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "_ingested_at",
+                  "_run_id",
+                  "_source_file",
+                  "artist",
+                  "chart",
+                  "date",
+                  "rank",
+                  "region",
+                  "streams",
+                  "title",
+                  "trend",
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "rank must not be null in Bronze charts"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "date must not be null in Bronze charts"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:17.596108+00:00"
+    },
+    {
+      "suite_name": "bronze_countries_suite",
+      "target_asset": "countries",
+      "layer": "bronze",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 2,
+        "passed_expectations": 2,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Bronze countries must contain ISO and UN M49 columns"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": [
+              "_ingested_at",
+              "_run_id",
+              "_source_file",
+              "alpha-2",
+              "alpha-3",
+              "country-code",
+              "intermediate-region",
+              "intermediate-region-code",
+              "iso_3166-2",
+              "name",
+              "region",
+              "region-code",
+              "sub-region",
+              "sub-region-code"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "_ingested_at",
+                  "_run_id",
+                  "_source_file",
+                  "alpha-2",
+                  "alpha-3",
+                  "country-code",
+                  "intermediate-region",
+                  "intermediate-region-code",
+                  "iso_3166-2",
+                  "name",
+                  "region",
+                  "region-code",
+                  "sub-region",
+                  "sub-region-code"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "alpha-3 country code must not be null in Bronze countries"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:17.660317+00:00"
+    },
+    {
+      "suite_name": "silver_tracks_suite",
+      "target_asset": "tracks",
+      "layer": "silver",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 19,
+        "passed_expectations": 19,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Silver tracks schema must include typed audio features and genre arrays"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": [
+              "acousticness",
+              "album_name",
+              "artist_count",
+              "artist_list",
+              "artists",
+              "danceability",
+              "duration_ms",
+              "energy",
+              "explicit",
+              "genre_count",
+              "genres",
+              "has_valid_tempo",
+              "has_valid_time_signature",
+              "instrumentalness",
+              "key",
+              "liveness",
+              "loudness",
+              "mode",
+              "popularity",
+              "popularity_conflict",
+              "primary_artist",
+              "primary_genre",
+              "source_row_count",
+              "speechiness",
+              "tempo",
+              "time_signature",
+              "track_id",
+              "track_name",
+              "valence"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "acousticness",
+                  "album_name",
+                  "artist_count",
+                  "artist_list",
+                  "artists",
+                  "danceability",
+                  "duration_ms",
+                  "energy",
+                  "explicit",
+                  "genre_count",
+                  "genres",
+                  "has_valid_tempo",
+                  "has_valid_time_signature",
+                  "instrumentalness",
+                  "key",
+                  "liveness",
+                  "loudness",
+                  "mode",
+                  "popularity",
+                  "popularity_conflict",
+                  "primary_artist",
+                  "primary_genre",
+                  "source_row_count",
+                  "speechiness",
+                  "tempo",
+                  "time_signature",
+                  "track_id",
+                  "track_name",
+                  "valence"
+                ],
+                "details": {
+                  "mismatched": {
+                    "unexpected": [
+                      "artist_count",
+                      "artist_list",
+                      "has_valid_tempo",
+                      "has_valid_time_signature",
+                      "popularity_conflict",
+                      "primary_artist",
+                      "source_row_count"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_id is primary key and must never be null"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "track_id must be completely unique after deduplication"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_match_regex",
+            "meta": {
+              "dimension": "format",
+              "description": "track_id must be exactly 22 alphanumeric characters"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_name must be present in Silver (blank names quarantined)"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "artists string must not be null"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "popularity must be between 0 and 100"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "duration_ms must be positive (at least 1s)"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "danceability unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "energy unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "speechiness unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "acousticness unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "instrumentalness unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "liveness unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "valence unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "loudness in valid dB range [-60.0, 10.0]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "pitch key must be in pitch class [0, 11]"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "meta": {
+              "dimension": "ranges",
+              "description": "mode must be 0 (minor) or 1 (major)"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "tempo must be > 0 and <= 300 BPM (0 sentinels set to null)"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 89740,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 157,
+                "missing_percent": 0.17494985513706263,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:21.089298+00:00"
+    },
+    {
+      "suite_name": "silver_charts_suite",
+      "target_asset": "charts",
+      "layer": "silver",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 11,
+        "passed_expectations": 11,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Silver charts must contain standardized column names and extracted track_id"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": [
+              "chart_artist",
+              "chart_date",
+              "chart_rank",
+              "chart_type",
+              "has_streams",
+              "is_global_region",
+              "region",
+              "region_country_name",
+              "streams",
+              "track_id",
+              "track_title",
+              "track_url",
+              "trend"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "chart_artist",
+                  "chart_date",
+                  "chart_rank",
+                  "chart_type",
+                  "has_streams",
+                  "is_global_region",
+                  "region",
+                  "region_country_name",
+                  "streams",
+                  "track_id",
+                  "track_title",
+                  "track_url",
+                  "trend"
+                ],
+                "details": {
+                  "mismatched": {
+                    "unexpected": [
+                      "is_global_region",
+                      "region_country_name"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_compound_columns_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "Primary grain (date, region, chart_type, rank) must be unique"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "chart_date must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_match_regex",
+            "meta": {
+              "dimension": "dates",
+              "description": "chart_date must conform to ISO 8601 YYYY-MM-DD"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "chart_rank must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "chart_positions",
+              "description": "chart rank must be between 1 and 200"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "chart region must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "chart_type must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "meta": {
+              "dimension": "chart_positions",
+              "description": "chart_type must be top200 or viral50"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_id parsed from URL must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "meta": {
+              "dimension": "chart_positions",
+              "description": "trend must be one of the 4 Spotify trend categories"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:21.502284+00:00"
+    },
+    {
+      "suite_name": "silver_countries_suite",
+      "target_asset": "countries",
+      "layer": "silver",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 5,
+        "passed_expectations": 5,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "iso_alpha2 must not be null (Namibia 'NA' recovered)"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_value_lengths_to_equal",
+            "meta": {
+              "dimension": "format",
+              "description": "iso_alpha2 must be exactly 2 characters"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "iso_alpha3 must not be null"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "iso_alpha3 must be unique primary key"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_value_lengths_to_equal",
+            "meta": {
+              "dimension": "format",
+              "description": "iso_alpha3 must be exactly 3 characters"
+            }
+          },
+          "result": {
+            "element_count": 249,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 249,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:21.598949+00:00"
+    },
+    {
+      "suite_name": "silver_track_genres_suite",
+      "target_asset": "track_genres",
+      "layer": "silver",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 3,
+        "passed_expectations": 3,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_id must not be null in genre bridge"
+            }
+          },
+          "result": {
+            "element_count": 113549,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 113549,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "genre must not be null in genre bridge"
+            }
+          },
+          "result": {
+            "element_count": 113549,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 113549,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_compound_columns_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "(track_id, genre) pairs must be unique"
+            }
+          },
+          "result": {
+            "element_count": 113549,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 113549,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:21.945936+00:00"
+    },
+    {
+      "suite_name": "quarantine_isolation_suite",
+      "target_asset": "tracks_quarantine",
+      "layer": "silver",
+      "success": true,
+      "status": "PASSED",
+      "engine": "CustomIntegrationValidator",
+      "statistics": {
+        "total_expectations": 2,
+        "passed_expectations": 2,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_quarantine_records_to_have_reasons",
+            "meta": {
+              "dimension": "quarantine",
+              "description": "Quarantined tracks must document non-empty reject reasons"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All reasons present",
+            "details": {
+              "custom_integration_check": true
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_quarantine_error_rate_to_be_below_threshold",
+            "meta": {
+              "dimension": "quarantine",
+              "description": "Quarantine rate must not breach error budget (0.1%)"
+            }
+          },
+          "result": {
+            "element_count": 89741,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.001,
+            "observed_value": "0.001% (threshold: 0.1%)",
+            "details": {
+              "custom_integration_check": true,
+              "quarantine_count": 1,
+              "clean_count": 89740
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:21.946916+00:00"
+    },
+    {
+      "suite_name": "gold_enriched_charts_suite",
+      "target_asset": "enriched_chart_data",
+      "layer": "gold",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 6,
+        "passed_expectations": 6,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "chart_record_id SHA-256 key must not be null"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "chart_record_id must be unique across all chart entries"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "dates",
+              "description": "chart_year must be within 2010..2030"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "dates",
+              "description": "chart_month must be 1..12"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "meta": {
+              "dimension": "dates",
+              "description": "chart_season must be winter, spring, summer, or autumn"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "chart_positions",
+              "description": "chart_rank in Gold must be 1..200"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 50000,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:22.686198+00:00"
+    },
+    {
+      "suite_name": "gold_country_analytics_suite",
+      "target_asset": "country_analytics",
+      "layer": "gold",
+      "success": true,
+      "status": "PASSED",
+      "engine": "GreatExpectations_1.24",
+      "statistics": {
+        "total_expectations": 2,
+        "passed_expectations": 2,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_compound_columns_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "Country analytics grain (region x chart_type) must be unique"
+            }
+          },
+          "result": {
+            "element_count": 73,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 73,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "chart_entries count must be positive"
+            }
+          },
+          "result": {
+            "element_count": 73,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 73,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:22.732858+00:00"
+    },
+    {
+      "suite_name": "referential_integrity_suite",
+      "target_asset": "star_schema_integrity",
+      "layer": "marts",
+      "success": true,
+      "status": "PASSED",
+      "engine": "CustomIntegrationValidator",
+      "statistics": {
+        "total_expectations": 5,
+        "passed_expectations": 5,
+        "failed_expectations": 0,
+        "success_percent": 100.0
+      },
+      "evaluations": [
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_foreign_keys_to_exist",
+            "meta": {
+              "dimension": "referential_integrity",
+              "description": "Every track_key in fact_chart must exist in dim_track"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All FKs resolved",
+            "details": {
+              "custom_integration_check": true,
+              "orphan_sample": []
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_foreign_keys_to_exist",
+            "meta": {
+              "dimension": "referential_integrity",
+              "description": "Every country_key in fact_chart must exist in dim_country"
+            }
+          },
+          "result": {
+            "element_count": 50000,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All FKs resolved",
+            "details": {
+              "custom_integration_check": true,
+              "orphan_sample": []
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_foreign_keys_to_exist",
+            "meta": {
+              "dimension": "referential_integrity",
+              "description": "Every track_key in bridge_track_artist must exist in dim_track"
+            }
+          },
+          "result": {
+            "element_count": 130801,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All FKs resolved",
+            "details": {
+              "custom_integration_check": true,
+              "orphan_sample": []
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_bridge_weights_to_sum_to_one",
+            "meta": {
+              "dimension": "referential_integrity",
+              "description": "Artist bridge credit_weight must sum strictly to 1.0 per track"
+            }
+          },
+          "result": {
+            "element_count": 95406,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All weight sums == 1.0",
+            "details": {
+              "custom_integration_check": true,
+              "invalid_sample": {}
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_bridge_weights_to_sum_to_one",
+            "meta": {
+              "dimension": "referential_integrity",
+              "description": "Genre bridge weighting_factor must sum strictly to 1.0 per track"
+            }
+          },
+          "result": {
+            "element_count": 89740,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "All weight sums == 1.0",
+            "details": {
+              "custom_integration_check": true,
+              "invalid_sample": {}
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-11-08T16:32:23.007104+00:00"
+    }
+  ]
+}

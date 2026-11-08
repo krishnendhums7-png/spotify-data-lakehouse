@@ -1,411 +1,546 @@
 {
-  "validation_run_utc": "2026-11-06T17:48:47.964103+00:00",
+  "validation_run_utc": "2026-11-08T17:03:05.126199+00:00",
   "author": "Member 4 (Data Quality & Workflow Orchestration)",
   "summary": {
-    "total_suites": 11,
+    "total_suites": 1,
     "passed_suites": 0,
-    "failed_suites": 11,
-    "total_expectations": 61,
-    "passed_expectations": 0,
-    "failed_expectations": 61,
+    "failed_suites": 1,
+    "total_expectations": 19,
+    "passed_expectations": 2,
+    "failed_expectations": 17,
     "overall_success": false
   },
   "suites": [
-    {
-      "suite_name": "bronze_tracks_suite",
-      "target_asset": "tracks",
-      "layer": "bronze",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 3,
-        "passed_expectations": 0,
-        "failed_expectations": 3,
-        "success_percent": 0.0
-      },
-      "evaluations": [
-        {
-          "success": false,
-          "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
-            "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'tracks' must exist on disk in layer 'bronze'"
-            }
-          },
-          "result": {
-            "element_count": 0,
-            "unexpected_count": 1,
-            "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
-            "details": {
-              "error": "Required dataset 'tracks' not found on disk in layer 'bronze'."
-            }
-          }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.962564+00:00"
-    },
-    {
-      "suite_name": "bronze_charts_suite",
-      "target_asset": "charts",
-      "layer": "bronze",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 3,
-        "passed_expectations": 0,
-        "failed_expectations": 3,
-        "success_percent": 0.0
-      },
-      "evaluations": [
-        {
-          "success": false,
-          "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
-            "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'charts' must exist on disk in layer 'bronze'"
-            }
-          },
-          "result": {
-            "element_count": 0,
-            "unexpected_count": 1,
-            "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
-            "details": {
-              "error": "Required dataset 'charts' not found on disk in layer 'bronze'."
-            }
-          }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.962583+00:00"
-    },
-    {
-      "suite_name": "bronze_countries_suite",
-      "target_asset": "countries",
-      "layer": "bronze",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 2,
-        "passed_expectations": 0,
-        "failed_expectations": 2,
-        "success_percent": 0.0
-      },
-      "evaluations": [
-        {
-          "success": false,
-          "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
-            "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'countries' must exist on disk in layer 'bronze'"
-            }
-          },
-          "result": {
-            "element_count": 0,
-            "unexpected_count": 1,
-            "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
-            "details": {
-              "error": "Required dataset 'countries' not found on disk in layer 'bronze'."
-            }
-          }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.962604+00:00"
-    },
     {
       "suite_name": "silver_tracks_suite",
       "target_asset": "tracks",
       "layer": "silver",
       "success": false,
-      "status": "MISSING_DATASET",
+      "status": "FAILED",
       "engine": "GreatExpectations_1.24",
       "statistics": {
         "total_expectations": 19,
-        "passed_expectations": 0,
-        "failed_expectations": 19,
-        "success_percent": 0.0
+        "passed_expectations": 2,
+        "failed_expectations": 17,
+        "success_percent": 10.53
       },
       "evaluations": [
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_not_be_null",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'tracks' must exist on disk in layer 'silver'"
+              "dimension": "nulls",
+              "description": "track_name must be present in Silver (blank names quarantined)"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'tracks' not found on disk in layer 'silver'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963179+00:00"
-    },
-    {
-      "suite_name": "silver_charts_suite",
-      "target_asset": "charts",
-      "layer": "silver",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 11,
-        "passed_expectations": 0,
-        "failed_expectations": 11,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_not_be_null",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'charts' must exist on disk in layer 'silver'"
+              "dimension": "nulls",
+              "description": "artists string must not be null"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'charts' not found on disk in layer 'silver'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963188+00:00"
-    },
-    {
-      "suite_name": "silver_countries_suite",
-      "target_asset": "countries",
-      "layer": "silver",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 5,
-        "passed_expectations": 0,
-        "failed_expectations": 5,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'countries' must exist on disk in layer 'silver'"
+              "dimension": "ranges",
+              "description": "energy unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'countries' not found on disk in layer 'silver'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963193+00:00"
-    },
-    {
-      "suite_name": "silver_track_genres_suite",
-      "target_asset": "track_genres",
-      "layer": "silver",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 3,
-        "passed_expectations": 0,
-        "failed_expectations": 3,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'track_genres' must exist on disk in layer 'silver'"
+              "dimension": "ranges",
+              "description": "speechiness unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'track_genres' not found on disk in layer 'silver'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963198+00:00"
-    },
-    {
-      "suite_name": "quarantine_isolation_suite",
-      "target_asset": "tracks_quarantine",
-      "layer": "silver",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 2,
-        "passed_expectations": 0,
-        "failed_expectations": 2,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'tracks_quarantine' must exist on disk in layer 'silver'"
+              "dimension": "ranges",
+              "description": "acousticness unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'tracks_quarantine' not found on disk in layer 'silver'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963202+00:00"
-    },
-    {
-      "suite_name": "gold_enriched_charts_suite",
-      "target_asset": "enriched_chart_data",
-      "layer": "gold",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 6,
-        "passed_expectations": 0,
-        "failed_expectations": 6,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'enriched_chart_data' must exist on disk in layer 'gold'"
+              "dimension": "ranges",
+              "description": "instrumentalness unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'enriched_chart_data' not found on disk in layer 'gold'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963436+00:00"
-    },
-    {
-      "suite_name": "gold_country_analytics_suite",
-      "target_asset": "country_analytics",
-      "layer": "gold",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 2,
-        "passed_expectations": 0,
-        "failed_expectations": 2,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'country_analytics' must exist on disk in layer 'gold'"
+              "dimension": "ranges",
+              "description": "liveness unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'country_analytics' not found on disk in layer 'gold'."
+              "gx_native": true,
+              "result": {}
             }
           }
-        }
-      ],
-      "timestamp": "2026-11-06T17:48:47.963444+00:00"
-    },
-    {
-      "suite_name": "referential_integrity_suite",
-      "target_asset": "star_schema_integrity",
-      "layer": "marts",
-      "success": false,
-      "status": "MISSING_DATASET",
-      "engine": "GreatExpectations_1.24",
-      "statistics": {
-        "total_expectations": 5,
-        "passed_expectations": 0,
-        "failed_expectations": 5,
-        "success_percent": 0.0
-      },
-      "evaluations": [
+        },
         {
           "success": false,
           "expectation_config": {
-            "expectation_type": "expect_dataset_to_exist",
+            "expectation_type": "expect_column_values_to_be_between",
             "meta": {
-              "dimension": "availability",
-              "description": "Dataset 'star_schema_integrity' must exist on disk in layer 'marts'"
+              "dimension": "ranges",
+              "description": "valence unit interval [0.0, 1.0]"
             }
           },
           "result": {
-            "element_count": 0,
+            "element_count": 1,
             "unexpected_count": 1,
             "unexpected_percent": 100.0,
-            "observed_value": "DATASET_NOT_FOUND",
+            "observed_value": "FAIL (GX 1.24)",
             "details": {
-              "error": "Required dataset 'star_schema_integrity' not found on disk in layer 'marts'."
+              "gx_native": true,
+              "result": {}
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "loudness in valid dB range [-60.0, 10.0]"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {}
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "pitch key must be in pitch class [0, 11]"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {}
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "meta": {
+              "dimension": "ranges",
+              "description": "mode must be 0 (minor) or 1 (major)"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {}
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "tempo must be > 0 and <= 300 BPM (0 sentinels set to null)"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {}
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_table_columns_to_match_set",
+            "meta": {
+              "dimension": "schema",
+              "description": "Silver tracks schema must include typed audio features and genre arrays"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": [
+              "danceability",
+              "duration_ms",
+              "popularity",
+              "track_id"
+            ],
+            "details": {
+              "gx_native": true,
+              "result": {
+                "observed_value": [
+                  "danceability",
+                  "duration_ms",
+                  "popularity",
+                  "track_id"
+                ],
+                "details": {
+                  "mismatched": {
+                    "missing": [
+                      "acousticness",
+                      "album_name",
+                      "artists",
+                      "energy",
+                      "explicit",
+                      "genre_count",
+                      "genres",
+                      "instrumentalness",
+                      "key",
+                      "liveness",
+                      "loudness",
+                      "mode",
+                      "primary_genre",
+                      "speechiness",
+                      "tempo",
+                      "time_signature",
+                      "track_name",
+                      "valence"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "meta": {
+              "dimension": "nulls",
+              "description": "track_id is primary key and must never be null"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": true,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_unique",
+            "meta": {
+              "dimension": "duplicates",
+              "description": "track_id must be completely unique after deduplication"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 0,
+            "unexpected_percent": 0.0,
+            "observed_value": "PASS (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 0,
+                "unexpected_percent": 0.0,
+                "partial_unexpected_list": [],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 0.0,
+                "unexpected_percent_nonmissing": 0.0,
+                "partial_unexpected_counts": [],
+                "partial_unexpected_index_list": []
+              }
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_match_regex",
+            "meta": {
+              "dimension": "format",
+              "description": "track_id must be exactly 22 alphanumeric characters"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 1,
+                "unexpected_percent": 100.0,
+                "partial_unexpected_list": [
+                  "invalid_length_id"
+                ],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 100.0,
+                "unexpected_percent_nonmissing": 100.0,
+                "partial_unexpected_counts": [
+                  {
+                    "value": "invalid_length_id",
+                    "count": 1
+                  }
+                ],
+                "partial_unexpected_index_list": [
+                  0
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "popularity must be between 0 and 100"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 1,
+                "unexpected_percent": 100.0,
+                "partial_unexpected_list": [
+                  999
+                ],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 100.0,
+                "unexpected_percent_nonmissing": 100.0,
+                "partial_unexpected_counts": [
+                  {
+                    "value": 999,
+                    "count": 1
+                  }
+                ],
+                "partial_unexpected_index_list": [
+                  0
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "duration_ms must be positive (at least 1s)"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 1,
+                "unexpected_percent": 100.0,
+                "partial_unexpected_list": [
+                  -500
+                ],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 100.0,
+                "unexpected_percent_nonmissing": 100.0,
+                "partial_unexpected_counts": [
+                  {
+                    "value": -500,
+                    "count": 1
+                  }
+                ],
+                "partial_unexpected_index_list": [
+                  0
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": false,
+          "expectation_config": {
+            "expectation_type": "expect_column_values_to_be_between",
+            "meta": {
+              "dimension": "ranges",
+              "description": "danceability unit interval [0.0, 1.0]"
+            }
+          },
+          "result": {
+            "element_count": 1,
+            "unexpected_count": 1,
+            "unexpected_percent": 100.0,
+            "observed_value": "FAIL (GX 1.24)",
+            "details": {
+              "gx_native": true,
+              "result": {
+                "element_count": 1,
+                "unexpected_count": 1,
+                "unexpected_percent": 100.0,
+                "partial_unexpected_list": [
+                  2.5
+                ],
+                "missing_count": 0,
+                "missing_percent": 0.0,
+                "unexpected_percent_total": 100.0,
+                "unexpected_percent_nonmissing": 100.0,
+                "partial_unexpected_counts": [
+                  {
+                    "value": 2.5,
+                    "count": 1
+                  }
+                ],
+                "partial_unexpected_index_list": [
+                  0
+                ]
+              }
             }
           }
         }
       ],
-      "timestamp": "2026-11-06T17:48:47.964092+00:00"
+      "timestamp": "2026-11-08T17:03:05.125681+00:00"
     }
   ]
 }
